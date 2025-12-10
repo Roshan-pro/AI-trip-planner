@@ -66,4 +66,14 @@ class TavilyPlaceSearchTool:
             return results["answer"]
         except Exception as e:
             return {"error": str(e)}
+    def tavily_search_hospitals(self,place:str)->dict:
+        """
+        Searches for hospitals in the specified place using TavilySearch.
+        """
+        tavily_tool =TavilySearch(topic="general",include_answers="advanced")
+        try:
+            results = tavily_tool.invoke({"query": f"what are the top hospitals and medical facilities in and around {place}"} )
+            return results["answer"]
+        except Exception as e:
+            return {"error": str(e)}
     

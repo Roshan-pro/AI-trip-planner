@@ -1,12 +1,12 @@
 class Caculator:
     @staticmethod
-    def multiply(a:int , b: int )->int:
+    def multiply(a:int|float , b: int|float )->int|float:
         return a * b
     @staticmethod
     def calculate_expense(*amount:float|int)-> float|int:
         return sum(amount)
     @staticmethod
-    def calculate_daily_budget(total: float, days: int) -> float:
+    def calculate_daily_budget(total: float|int, days: int|float) -> float|int:
         """
         Calculate daily budget
 
