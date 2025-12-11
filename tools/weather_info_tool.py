@@ -12,7 +12,7 @@ class WeatherInfoTool:
         self.weather_tool_list=self._setup_tools()
     
     def _setup_tools(self) -> List:
-        @tool
+        @tool(name_or_callable="get_current_weather", description="Get current weather information for a specified place.")
         def get_current_weather(place: str) -> dict:
             """Get current weather information for a specified place."""
             weather_data= self.weather_service.get_weather(place)
@@ -22,7 +22,7 @@ class WeatherInfoTool:
                 humidity= weather_data.get('main', {}).get('humidity',"N/A")
                 return f"Current weather in {place}: Temperature: {temp}°C, Description: {description}, Humidity: {humidity}%"
             return {"error": f"Could not retrieve weather data for {place}."}
-        @tool
+        @tool(name_or_callable="get_weather_forecast", description="Get weather forecast for a specified place.")
         def get_weather_forecast(place: str) -> str:
             """Get weather forecast for a specified place."""
             forecast_data= self.weather_service.get_forecast_weather(place)

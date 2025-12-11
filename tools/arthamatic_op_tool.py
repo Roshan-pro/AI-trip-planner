@@ -4,7 +4,7 @@ load_dotenv()
 from langchain.tools import tool
 from langchain_community.utilities.alpha_vantage import AlphaVantageAPIWrapper
 
-@tool
+@tool(name_or_callable="multiply", description="Multiplies two integers together.")
 def multiply(a: int, b: int) -> int:
     """
     Multiply two integers.
@@ -18,7 +18,7 @@ def multiply(a: int, b: int) -> int:
     """
     return a * b
 
-@tool
+@tool(name_or_callable="add", description="Adds two integers.")
 def add(a: int, b: int) -> int:
     """
     Add two integers.
@@ -32,7 +32,7 @@ def add(a: int, b: int) -> int:
     """
     return a + b
 
-@tool
+@tool(name_or_callable="currency_converter", description="Converts an amount from one currency to another.")
 def currency_converter(from_curr: str, to_curr: str, value: float)->float:
     os.environ["ALPHAVANTAGE_API_KEY"] = os.getenv('ALPHAVANTAGE_API_KEY')
     alpha_vantage = AlphaVantageAPIWrapper()

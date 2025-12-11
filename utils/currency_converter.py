@@ -7,7 +7,7 @@ class CurrencyConverter:
     def convert(self, from_currency: str, to_currency: str, amount: float) -> dict:
         """Convert amount from one currency to another."""
         try:
-            url = f"{self.base_url}{self.api_key}/pair/{from_currency}/{to_currency}/{amount}"
+            url = f"{self.base_url}{self.api_key}/latest/{from_currency}/{to_currency}/{amount}"
             response = requests.get(url)
             if response.status_code == 200:
                 return response.json()

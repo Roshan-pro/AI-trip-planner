@@ -10,32 +10,32 @@ class PlaceSearchTool:
 
     def _setup_tool(self)-> list:
         """Sets up the list of place search tools."""
-        @tool
+        @tool(name_or_callable="search_attractions", description="Searches for attractions in the specified place.")
         def search_attractions(place: str) -> dict:
             """Searches for attractions in the specified place."""
             return self.tavily_search.tavily_search_attractions(place)
-        @tool
+        @tool(name_or_callable="search_restaurants", description="Searches for restaurants in the specified place.")
         def search_restaurants(place: str) -> dict:
             """Searches for restaurants in the specified place."""
             return self.tavily_search.tavily_search_restaurants(place)
-        @tool
+        @tool(name_or_callable="search_hotels", description="Searches for hotels in the specified place.")
         def search_hotels(place: str) -> dict:
             """Searches for hotels in the specified place."""
             return self.tavily_search.tavily_search_hotels(place)      
-        @tool
+        @tool(name_or_callable="search_transportation", description="Searches for transportation options in the specified place.")
         def search_transportation(place: str) -> dict:
             """Searches for transportation options in the specified place."""
             return self.tavily_search.tavily_search_transportation(place)
         
-        @tool
+        @tool(name_or_callable="search_nightlife", description="Searches for nightlife options in the specified place.")
         def search_nightlife(place: str) -> dict:
             """Searches for nightlife options in the specified place."""
             return self.tavily_search.tavily_search_nightlife(place)    
-        @tool
+        @tool(name_or_callable="search_shopping", description="Searches for shopping options in the specified place.")
         def search_shopping(place: str) -> dict:    
             """Searches for shopping options in the specified place."""
             return self.tavily_search.tavily_search_shopping(place)    
-        @tool
+        @tool(name_or_callable="search_hospitals", description="Searches for hospitals in the specified place.")
         def search_hospitals(place: str) -> dict:
             """Searches for hospitals in the specified place."""
             return self.tavily_search.tavily_search_hospitals(place)
