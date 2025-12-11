@@ -2,8 +2,7 @@ import streamlit as st
 import requests
 import datetime
 
-BASE_URL = "http://127.0.0.1:8000"  # change to your deployed URL if needed
-
+BASE_URL = "https://ai-trip-planner-3-yih9.onrender.com"
 st.set_page_config(
     page_title="Travel Planner Agentic Application",
     page_icon="🌍",
